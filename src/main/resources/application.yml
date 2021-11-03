@@ -1,0 +1,39 @@
+#Server Configuration
+server:
+  port: 8081
+#Spring Configuration
+spring:
+  application:
+    name: softdevteam_test
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${RDS_SOFTDEVTEAM_URL}
+    hikari:
+      username: ${RDS_SOFTDEVTEAM_USER}
+      password: ${RDS_SOFTDEVTEAM_PASSWORD}
+      connection-timeout: 10000
+      idle-timeout: 50000
+      minimum-idle: 0
+      maximum-pool-size: 10
+      connection-test-query: select 1
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    open-in-view: false
+    generate-ddl: false
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+      org.hibernate.default_catalog: softdevteam_test
+      org.hibernate.default_schema: administrative
+      org.hibernate.envers.default_catalog: softdevteam_test
+      org.hibernate.envers.default_schema: history
+      org.hibernate.envers.storeDataAtDelete: true
+      hibernate.cache.use_second_level_cache: false
+      hibernate.cache.use_query_cache: false
+      hibernate.generate_statistics: false
+      hibernate.enable_lazy_load_no_trans: true
