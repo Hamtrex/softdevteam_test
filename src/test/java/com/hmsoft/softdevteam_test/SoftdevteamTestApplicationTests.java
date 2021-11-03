@@ -1,10 +1,10 @@
-package com.hmsoft.devsofteam_test;
+package com.hmsoft.softdevteam_test;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DevsofteamTestApplicationTests {
+class SoftdevteamTestApplicationTests {
 
 	@Test
 	void contextLoads() {

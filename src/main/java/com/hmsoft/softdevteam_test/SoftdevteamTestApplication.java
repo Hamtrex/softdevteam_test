@@ -1,13 +1,16 @@
-package com.hmsoft.devsofteam_test;
+package com.hmsoft.softdevteam_test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author hasson_medrano
+ */
 @SpringBootApplication
-public class DevsofteamTestApplication {
+public class SoftdevteamTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DevsofteamTestApplication.class, args);
+		SpringApplication.run(SoftdevteamTestApplication.class, args);
 	}
 
 }
