@@ -24,17 +24,17 @@ public class PersonController {
     }
 
     @PutMapping(path = "deleteByPersonalId/{personalId}")
-    ResponseEntity<String> deleteByPersonalId(@PathVariable Long personalId) {
+    ResponseEntity<Person> deleteByPersonalId(@PathVariable Long personalId) {
         try {
             Optional<Person> optionalPerson = this.personRestRepository.findByPersonalId(personalId);
             if (optionalPerson.isPresent()) {
                 Person person = optionalPerson.get();
                 person.setActive(false);
                 this.personRestRepository.save(person);
+                return new ResponseEntity<>(person, HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
-            return new ResponseEntity<>(HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
