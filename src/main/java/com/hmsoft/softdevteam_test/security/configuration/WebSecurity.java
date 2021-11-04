@@ -70,7 +70,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         // Configure Origins
         configuration.setAllowedOrigins(Collections.singletonList("*"));
         // Configure Methods
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PATCH"));
+        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PATCH", "PUT"));
         // Configure Headers
         configuration.setAllowedHeaders(Arrays.asList("Authorization", "GeoLocation", "Content-Type", "X-Requested-With", "Accept", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "responseType"));
         // Configure Credentials
